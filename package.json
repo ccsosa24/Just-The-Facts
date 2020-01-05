@@ -1,0 +1,29 @@
+{
+  "name": "just-the-facts",
+  "version": "1.0.0",
+  "description": "News Articles",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ccsosa24/Just-The-Facts.git"
+  },
+  "author": "Sosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ccsosa24/Just-The-Facts/issues"
+  },
+  "homepage": "https://github.com/ccsosa24/Just-The-Facts#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "logger": "0.0.1",
+    "mongoose": "^5.8.4",
+    "morgan": "^1.9.1"
+  }
+}

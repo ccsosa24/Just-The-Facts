@@ -1,0 +1,61 @@
+
+video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background: url(https://cdn.videvo.net/videvo_files/video/free/2012-10/small_watermarked/hd0067-H264%2075_preview.mp4) no-repeat;
+    background-size: cover;
+    transition: 1s opacity;
+  }
+
+  .jumbotron{
+      text-align: center;
+      background: transparent;
+      color: white;
+  }
+
+  #wrapper {
+      width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 5%;
+      outline-color: black;
+  }
+
+  #articles {
+      display: inline-block;
+      overflow: auto;
+      width: 60%;
+      height: 700px;
+  }
+  #notes {
+      float: right;
+      width: 30%;
+  }
+
+  textarea, input {
+      display: block;
+      width: 100%;
+      background-color: whitesmoke;
+  }
+
+  input{
+      height: 36px;
+      font-size: 24px;
+  }
+
+  textarea {
+      height: 200px;
+      font-size: 18px;
+  }
+
+  h1{
+      font-size: 80px;
+      font-family:'Girassol', cursive; 
+  }
