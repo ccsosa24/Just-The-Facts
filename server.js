@@ -7,7 +7,7 @@ var cheerio = require("cheerio");
 
 var db = require("./models");
 
-var PORT = 3000;
+var PORT = process.envPORT || 3000;
 
 var app = express();
 
@@ -20,29 +20,43 @@ mongoose.connect("mongodb://localhost/just-the-facts", { useNewUrlParser: true }
     
 
 app.get("/scrape", function(req, res) {
-    axios.get("https://abcnews.com/").then(function(response){
+    console.log("INSIDE SCRAPE")
+    axios.get("https://news.ycombinator.com/").then(function(response){
+        //console.log(response.data)
         var $ = cheerio.load(response.data);
-        $("article h2").each(function(i, element) {
+      
+        $(".title").each(function(i, element) {
+            
+            // console.log("-------------------------------------I")
+            // console.log(i)
+            // console.log("----------------------------ELEMENT")
+            // console.log(element)
             var result ={};
+            // console.log("=============================%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+            result.title = $(element).children("a").text();
+            result.link = $(element).children("a").attr("href");
 
-            result.title = $(this).children("a").text();
-            result.link = $(this).children("a").attr("href");
-
+            // console.log(result.title = $(this).children("a").text())
+            // console.log($(this).children("a").attr("href"))
+            
             db.Article.create(result).then(function(dbArticle){
+                console.log("YOUR IN ARICLES")
                 console.log(dbArticle);
             })
             .catch(function(err) {
                 console.log(err);
             });
-
+            console.log("------------------------------------")
+            console.log(result)
+            console.log("-------------------------------------")
         });
-
+        
         res.send("Scrape Complete");
-    )};
+    });
 });
 
 app.get("/articles", function(req, res) {
-    dbArticle.find({}).then(function(dvArticle) {
+    db.Article.find().then(function(dvArticle) {
         res.json(dbArticle);
      })
      .catch(function(err){
