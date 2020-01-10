@@ -24,14 +24,41 @@
         </div>
     </div>
 
-    <div id="wrapper">
-        <h1>Note Scraper</h1>
-        <a href="/scrape" id="btn-scrape">1. Scrape</a>
-        <a href="/articles" id="btn-articles">2. Articles</a>
+    <div id="container">
+        <div class="row">
+            <div class="col">
+        <a href="/scrape" id="btn-scrape"><h4>Scrape</h4></a>
+            </div>
+            <div class="col-6">
 
-        <div id="articles"></div>
-        <div id="notes"></div>
+            </div>
+            <div class="col">
+        <a href="/articles" id="btn-articles"><h4>More Stories</h4></a>
+        </div>
+        </div>
     </div>
+
+    
+    <div id="container2" >
+        
+        <div id="articles">
+            <lu>
+                <li class="summary"></li>
+            </lu>
+           
+                <a href="/articles" method="GET" class="link"><h4>Get Story</h4></a>
+                <input type="hidden" name="note" value="notes">
+            <button class="btn-lg" id="save" type="submit">Save It</button>
+                
+
+           
+
+            </div>
+       
+        </div>
+
+        
+    
 
 
 

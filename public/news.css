@@ -20,19 +20,24 @@ video {
       color: white;
   }
 
-  #wrapper {
-      width: 960px;
+  #container {
       margin-left: auto;
       margin-right: auto;
       padding-top: 5%;
       outline-color: black;
+      position: center;
   }
+
+#container2{
+    background-color: cyan;
+}
 
   #articles {
       display: inline-block;
       overflow: auto;
-      width: 60%;
-      height: 700px;
+      width: 30%;
+      height: 400px;
+      
   }
   #notes {
       float: right;
@@ -42,7 +47,7 @@ video {
   textarea, input {
       display: block;
       width: 100%;
-      background-color: whitesmoke;
+      background-color:;
   }
 
   input{
@@ -58,4 +63,7 @@ video {
   h1{
       font-size: 80px;
       font-family:'Girassol', cursive; 
+  }
+  h4{
+      color: whitesmoke;
   }

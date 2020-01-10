@@ -7,7 +7,7 @@ var cheerio = require("cheerio");
 
 var db = require("./models");
 
-var PORT = process.envPORT || 3000;
+var PORT = process.env.PORT || 3000;
 
 var app = express();
 
@@ -39,6 +39,7 @@ app.get("/scrape", function(req, res) {
             // console.log(result.title = $(this).children("a").text())
             // console.log($(this).children("a").attr("href"))
             
+
             db.Article.create(result).then(function(dbArticle){
                 console.log("YOUR IN ARICLES")
                 console.log(dbArticle);
@@ -85,8 +86,34 @@ app.post("/articles/:id", function(req, res) {
     })
     .then(function(err){
         res.json(err);
-    });
+    })
+    // .catch(function(err){
+    //     res.json(err)
+    // });
 });          
+
+app.get("/", function(req, res) {
+    console.log("getroutes")
+    res.render("index")
+    // db.Article.find().then(function(dbArticle) {
+
+    // //     res.json(dbArticle);
+    // //  })
+    // //  .catch(function(err){
+    // //      res.json(err);
+
+
+    // //      });
+    
+    // // .exec(function (err, found) {
+    // //     if(err) throw err;
+    // //     res.render("index", {
+    // //         articles: found
+    // //     })
+    // //     res.json(found);
+    // //     }
+     });
+
 
 app.listen(PORT, function() {
     console.log("App running on port " + PORT + "!");
